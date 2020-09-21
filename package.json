@@ -9,7 +9,7 @@
         "name": "Install gtag.js (Google Analytics)",
         "base": "html",
         "template": {
-          "script": "<script src=\"https://www.googletagmanager.com/gtag/js?id=<%- ga_property %>\"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);};gtag('js', new Date());gtag('config', '<%- ga_property %>');</script>"
+          "script": "<script src=\"https://www.googletagmanager.com/gtag/js?id=<%- ga_property %>\"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '<%- ga_property %>');</script>"
         },
         "params": [
           {"name":  "ga_property", "label": "Google Analytics Property ID", "required":  true}
