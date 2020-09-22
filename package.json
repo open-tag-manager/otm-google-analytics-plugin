@@ -14,6 +14,27 @@
         "params": [
           {"name":  "ga_property", "label": "Google Analytics Property ID", "required":  true}
         ]
+      },
+      {
+        "id": "google-gtag-event-auto",
+        "name": "Auto configured event tracking (Google Analytics)",
+        "base": "script",
+        "template": {
+          "script": "gtag('event', params.name, {event_category: params.target, event_label: params.el})"
+        }
+      },
+      {
+        "id": "google-gtag-event",
+        "name": "Event tracking (Google Analytics)",
+        "base": "script",
+        "template": {
+          "script": "gtag('event', '<%- event_name  %>', {event_category: '<%- event_category ->', event_label: <%- event_label %>})"
+        },
+        "params": [
+          {"name":  "event_name", "label": "Google Analytics Event Name", "required":  true},
+          {"name":  "event_category", "label": "Google Analytics Event Category", "required":  true},
+          {"name":  "event_label", "label": "Google Analytics Event Label", "required":  false}
+        ]
       }
     ]
   }
